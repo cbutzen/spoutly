@@ -1,0 +1,57 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+body.spoutly-theme .navbar{
+	background-color:#1d2028;
+	height:50px;
+}
+
+body.spoutly-theme .navbar:after{
+	height:0;
+	
+}
+
+
+.color-white{
+	color:#ffffff;
+}
+
+
+
+.statusbar-overlay {
+    
+}
+
+iframe{
+	max-width:100% !important;
+	height:auto !important;
+}
+
+body.spoutly-theme .content-block-title{
+	font-size:22px;
+	font-weight:600;
+}
+
+.card-header.card-featured-image {
+    height: 300px;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+.card-header.card-title{
+	font-weight:600;
+}
+
+.card-header.card-title a{
+	color:#333333;
+}
