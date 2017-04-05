@@ -35,4 +35,8 @@
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <engine name="ios" spec="~4.3.1" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+	<preference name="MediaPlaybackRequiresUserAction" value="false" />   
+	<allow-navigation href="*youtube*" />
+	<allow-navigation href="*ytimg*" />
 </widget>
