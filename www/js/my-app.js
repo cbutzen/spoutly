@@ -29,7 +29,8 @@ $$(document).on('deviceready', function() {
         	myApp.pullToRefreshDone();
     	}, 2000);
 	});
-    
+   
+   myApp.initPullToRefresh(ptrContent);
    
 });
 
