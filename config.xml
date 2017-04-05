@@ -9,10 +9,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-navigation href="http://*/*" />
-    <allow-navigation href="https://*/*" />
+    <allow-intent href="http://spoutly.com/*" />
+    <allow-navigation href="http://spoutly.com/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
@@ -31,8 +29,4 @@
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <engine name="ios" spec="~4.3.1" />
-    <preference name="AllowInlineMediaPlayback" value="true" />
-	<preference name="MediaPlaybackRequiresUserAction" value="false" />   
-	<allow-navigation href="*youtube*" />
-	<allow-navigation href="*ytimg*" />
 </widget>
