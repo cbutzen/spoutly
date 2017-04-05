@@ -24,7 +24,7 @@ var ptrContent = $$('.pull-to-refresh-content');
 	ptrContent.on('ptr:refresh', function (e) {
     // Emulate 2s loading
     	setTimeout(function () {
-       		getArticles();
+       		//getArticles();
         	// When loading done, we need to reset it
         	myApp.pullToRefreshDone();
     	}, 2000);
