@@ -11,6 +11,10 @@
     <access origin="*" />
     <allow-intent href="http://spoutly.com/*" />
     <allow-navigation href="http://spoutly.com/*" />
+    
+     <allow-intent href="http://*youtube.com/*" />
+    <allow-navigation href="http://*youtube.com/*" />
+    
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />

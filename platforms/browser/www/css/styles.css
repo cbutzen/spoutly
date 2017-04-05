@@ -36,6 +36,11 @@ iframe{
 	height:auto !important;
 }
 
+.content-block img{
+	max-width:100%;
+	height:auto;
+}
+
 body.spoutly-theme .content-block-title{
 	font-size:22px;
 	font-weight:600;
