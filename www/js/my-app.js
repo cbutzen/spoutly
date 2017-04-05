@@ -15,6 +15,21 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     getArticles();
+    
+    
+    // Pull to refresh content
+	var ptrContent = $$('.pull-to-refresh-content');
+ 
+	// Add 'refresh' listener on it
+	ptrContent.on('ptr:refresh', function (e) {
+    // Emulate 2s loading
+    	setTimeout(function () {
+       		getArticles();
+        	// When loading done, we need to reset it
+        	myApp.pullToRefreshDone();
+    	}, 2000);
+	});
+    
    
 });
 
@@ -97,6 +112,8 @@ function getArticle(id){
 	
 	});
 }
+
+
 
 
 
