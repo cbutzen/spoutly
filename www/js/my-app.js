@@ -14,11 +14,9 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
-    getArticles();
-});
-
- // Pull to refresh content
-var ptrContent = $$('.pull-to-refresh-content');
+    
+    // Pull to refresh content
+	var ptrContent = $$('.pull-to-refresh-content');
  
 	// Add 'refresh' listener on it
 	ptrContent.on('ptr:refresh', function (e) {
@@ -28,9 +26,15 @@ var ptrContent = $$('.pull-to-refresh-content');
         	// When loading done, we need to reset it
         	myApp.pullToRefreshDone();
     	}, 2000);
-});
+	});
    
-myApp.initPullToRefresh(ptrContent);
+	myApp.initPullToRefresh(ptrContent);
+    
+    
+    
+    getArticles();
+});
+
 
 // Now we need to run the code that will be executed only for About page.
 
