@@ -14,7 +14,8 @@
     <meta http-equiv="Content-Security-Policy" 
              content="default-src *; 
                       style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
-                      script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+                      script-src * 'self' 'unsafe-inline' 'unsafe-eval';
+                      img-src * 'self' 'unsafe-inline' 'unsafe-eval'">
 
 
 
@@ -82,7 +83,7 @@
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars color-white"></i></a>
+                        <a href="#" class="link icon-only open-panel color-white"><i class="icon icon-bars color-white"></i></a>
                     </div>
                 </div>
             </div>
@@ -91,8 +92,14 @@
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
-                    <div class="page-content">
+                    <div class="page-content pull-to-refresh-content" data-ptr-distance="55">
                            
+                            <!-- Default pull to refresh layer-->
+                            <div class="pull-to-refresh-layer">
+                              <div class="preloader"></div>
+                              <div class="pull-to-refresh-arrow"></div>
+                            </div>
+                            
                             <div class="content-block-title">New Reads</div>
                             
                             <div class="article-list">
@@ -109,8 +116,8 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
+                    <!--<a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>-->
                 </div>
             </div>
         </div>

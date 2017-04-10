@@ -33,20 +33,38 @@
     <access origin="*" />
     <allow-intent href="http://spoutly.com/*" />
     <allow-navigation href="http://spoutly.com/*" />
+    <allow-intent href="http://*youtube.com/*" />
+    <allow-navigation href="http://*youtube.com/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-navigation href="*youtube*" />
+    <allow-navigation href="*ytimg*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
-    <preference name="AllowInlineMediaPlayback" value="false" />
+    <icon height="180" src="www/images/icons/ios/icon-60@3x.png" width="180" />
+    <icon height="60" src="www/images/icons/ios/icon-60.png" width="60" />
+    <icon height="120" src="www/images/icons/ios/icon-60@2x.png" width="120" />
+    <icon height="76" src="www/images/icons/ios/icon-76.png" width="76" />
+    <icon height="152" src="www/images/icons/ios/icon-76@2x.png" width="152" />
+    <icon height="40" src="www/images/icons/ios/icon-40.png" width="40" />
+    <icon height="80" src="www/images/icons/ios/icon-40@2x.png" width="80" />
+    <icon height="57" src="www/images/icons/ios/icon.png" width="57" />
+    <icon height="114" src="www/images/icons/ios/icon@2x.png" width="114" />
+    <icon height="72" src="www/images/icons/ios/icon-72.png" width="72" />
+    <icon height="144" src="www/images/icons/ios/icon-72@2x.png" width="144" />
+    <icon height="29" src="www/images/icons/ios/icon-small.png" width="29" />
+    <icon height="58" src="www/images/icons/ios/icon-small@2x.png" width="58" />
+    <icon height="50" src="www/images/icons/ios/icon-50.png" width="50" />
+    <icon height="100" src="www/images/icons/ios/icon-50@2x.png" width="100" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
-    <preference name="MediaPlaybackRequiresUserAction" value="false" />
     <preference name="SuppressesIncrementalRendering" value="false" />
     <preference name="SuppressesLongPressGesture" value="false" />
     <preference name="Suppresses3DTouchGesture" value="false" />
@@ -56,4 +74,5 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
 </widget>

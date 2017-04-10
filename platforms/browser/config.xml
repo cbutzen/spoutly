@@ -11,11 +11,17 @@
     <access origin="*" />
     <allow-intent href="http://spoutly.com/*" />
     <allow-navigation href="http://spoutly.com/*" />
+    <allow-intent href="http://*youtube.com/*" />
+    <allow-navigation href="http://*youtube.com/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-navigation href="*youtube*" />
+    <allow-navigation href="*ytimg*" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
 </widget>
