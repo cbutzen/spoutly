@@ -63,7 +63,7 @@ myApp.onPageInit('about', function (page) {
 myApp.onPageInit('google', function (page) {
     // Do something here for "about" page
    //console.log(page);
-   $$('.content-block iframe').attr('src', 'http://google.com');
+   $$('.content-block').find('iframe').attr('src', 'http://google.com');
 });
    
 
