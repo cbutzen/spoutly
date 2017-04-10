@@ -123,6 +123,10 @@ function getArticle(id){
 			
 			$$('.content-block').html(content);
 			
+			$$.each($$('.content-block a'), function(index, value){
+				$$(value).addClass('external');
+			});
+			
 		}
 	
 	});
