@@ -33,28 +33,18 @@ $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
     
-    $$('.external-link').on('click, touchend', function(event){
-    
-    	var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
-    	ref.show();
-    });
-    
-    
     myApp.initPullToRefresh(ptrContent);
-    
-    
-    
-    
+ 
     getArticles();
 });
 
 
 // Now we need to run the code that will be executed only for About page.
 
-myApp.onPageInit('index', function (page) {
-    // Do something here for "about" page
-   //console.log(page);
-   
+$$('.external-link').on('click, touchend', function(event){
+    
+    var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
+    ref.show();
 });
 
 
