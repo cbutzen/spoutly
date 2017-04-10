@@ -36,7 +36,7 @@ $$(document).on('deviceready', function() {
     $$('.external-link').on('click, touchend', function(event){
     
     	var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
-    	event.preventDefault();
+    	ref.show();
     });
     
     

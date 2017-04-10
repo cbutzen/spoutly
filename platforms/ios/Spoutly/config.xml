@@ -38,6 +38,8 @@
     <allow-navigation href="http://spoutly.com/*" />
     <allow-intent href="http://*youtube.com/*" />
     <allow-navigation href="http://*youtube.com/*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
