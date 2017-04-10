@@ -34,12 +34,18 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <origin href="http://spoutly.com/*" />
     <allow-intent href="http://spoutly.com/*" />
     <allow-navigation href="http://spoutly.com/*" />
+    <origin href="http://*youtube.com/*" />
     <allow-intent href="http://*youtube.com/*" />
     <allow-navigation href="http://*youtube.com/*" />
+    <origin href="http://*twitter.com/*" />
     <allow-intent href="http://*twitter.com/*" />
     <allow-navigation href="http://*twitter.com/*" />
+    <origin href="http://*platform.twitter.com/*" />
+    <allow-intent href="http://*platform.twitter.com/*" />
+    <allow-navigation href="http://*platform.twitter.com/*" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
     <allow-intent href="tel:*" />
