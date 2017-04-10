@@ -30,13 +30,8 @@ $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
     myApp.initPullToRefresh(ptrContent);
-    //myApp.alert('Hello there!');
     
-    $$('.inapp-browser').on('click', function(e){
-    	var url = $$(this).attr('href');
-    	var ref = window.open(url, '_blank', 'location=no');
-    	e.preventDefault();
-    });
+    
     
     getArticles();
 });
@@ -47,7 +42,11 @@ $$(document).on('deviceready', function() {
 myApp.onPageInit('index', function (page) {
     // Do something here for "about" page
    //console.log(page);
-   myApp.alert('Hello');
+   $$('.inapp-browser').on('click', function(e){
+    	var url = $$(this).attr('href');
+    	var ref = window.open(url, '_blank', 'location=no');
+    	e.preventDefault();
+    });
 });
 
 
@@ -63,6 +62,7 @@ myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
    //console.log(page);
 });
+
 
 
 function getArticles(){
