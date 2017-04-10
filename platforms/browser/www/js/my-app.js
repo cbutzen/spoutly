@@ -32,6 +32,11 @@ $$(document).on('deviceready', function() {
     myApp.initPullToRefresh(ptrContent);
     //myApp.alert('Hello there!');
     
+    $$('.inapp-browser').on('click', function(e){
+    	var url = $$(this).attr('href');
+    	var ref = window.open(url, '_blank', 'location=no');
+    	e.preventDefault();
+    });
     
     getArticles();
 });
@@ -58,14 +63,6 @@ myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
    //console.log(page);
 });
-
-
-myApp.onPageInit('google', function (page) {
-    // Do something here for "about" page
-   //console.log(page);
-   $$('.content-block').find('iframe').attr('src', 'http://google.com');
-});
-   
 
 
 function getArticles(){
@@ -130,8 +127,7 @@ function getArticle(id){
 			$$('.content-block').html(content);
 			
 			$$.each($$('.content-block a'), function(index, value){
-				//$$(value).addClass('external');
-				//$$(value).attr('onclick', 'onClick="window.open('+$$(value).attr('href')+',\'_blank\',\'location=yes\');return false;"');
+				$$(value).addClass('inapp-browser');
 			});
 			
 		}
