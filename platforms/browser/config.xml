@@ -30,8 +30,15 @@
     <origin href="https://*platform.twitter.com/*" />
     <allow-intent href="https://*platform.twitter.com/*" />
     <allow-navigation href="https://*platform.twitter.com/*" />
-    <access origin="https://cdn.syndication.twimg.com" />
-    <access origin="http://cdn.syndication.twimg.com" />
+    <access origin="https://cdn.syndication.twimg.com/*" />
+    <allow-intent href="https://cdn.syndication.twimg.com/*" />
+    <allow-navigation href="https://cdn.syndication.twimg.com/*" />
+    <access origin="http://cdn.syndication.twimg.com/*" />
+    <allow-intent href="http://cdn.syndication.twimg.com/*" />
+    <allow-navigation href="http://cdn.syndication.twimg.com/*" />
+    <allow-navigation href="https://*.imgur.com/" />
+    <allow-navigation href="https://*.twitter.com/" />
+    <allow-navigation href="https://*.twimg.com/" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
     <allow-intent href="tel:*" />

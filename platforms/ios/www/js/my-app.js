@@ -36,16 +36,21 @@ $$(document).on('deviceready', function() {
     myApp.initPullToRefresh(ptrContent);
  
     getArticles();
+    
+    
+    
 });
 
 
-// Now we need to run the code that will be executed only for About page.
-
-$$('.external-link').on('click, touchend', function(event){
+$$(document).on('click, touchend','.external-link', function(event){
     var url = $$(this).attr('href');
     var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
     ref.show();
 });
+
+// Now we need to run the code that will be executed only for About page.
+
+
 
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
