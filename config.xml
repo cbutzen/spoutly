@@ -121,9 +121,7 @@
     	<param name="ios-package" value="CDVInAppBrowser" />
 	</feature>
 	<feature name="InAppBrowser" />
-	<preference name="StatusBarOverlaysWebView" value="true" />
-	<preference name="StatusBarBackgroundColor" value="#1d2028" />
-	<preference name="StatusBarStyle" value="lightcontent" />
+	
      
     
      
