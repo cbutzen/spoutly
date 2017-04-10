@@ -25,18 +25,25 @@ ptrContent.on('refresh', function (e) {
 	}, 2000);
 });
 
+
+
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
-    myApp.initPullToRefresh(ptrContent);
-    //myApp.alert('Hello there!');
     
-    $$('.inapp-browser').on('click', function(e){
-    	var url = $$(this).attr('href');
-    	var ref = window.open(url, '_blank', 'location=no');
-    	e.preventDefault();
+    $$('.external-link').on('click, touchend', function(event){
+    
+    	var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
+    	event.preventDefault();
     });
+    
+    
+    myApp.initPullToRefresh(ptrContent);
+    
+    
+    
     
     getArticles();
 });
@@ -47,7 +54,7 @@ $$(document).on('deviceready', function() {
 myApp.onPageInit('index', function (page) {
     // Do something here for "about" page
    //console.log(page);
-   myApp.alert('Hello');
+   
 });
 
 
@@ -57,12 +64,16 @@ myApp.onPageInit('article', function (page) {
    
    getArticle(page.query.id);
    //console.log(page);
+   
+   
+   
 });
 
 myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
    //console.log(page);
 });
+
 
 
 function getArticles(){
@@ -125,10 +136,6 @@ function getArticle(id){
 			var content = data[0].content.rendered;
 			
 			$$('.content-block').html(content);
-			
-			$$.each($$('.content-block a'), function(index, value){
-				$$(value).addClass('inapp-browser');
-			});
 			
 		}
 	

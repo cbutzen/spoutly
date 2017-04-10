@@ -26,17 +26,22 @@ ptrContent.on('refresh', function (e) {
 });
 
 
-$$('external-link').on('click, touchend', function(event){
-   	var url = $$(this).attr('href');
-   	var ref = window.open(url, '_blank', 'location=yes');
-   	event.preventDefault();
-});
+
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
+    
+    $$('.external-link').on('click, touchend', function(event){
+    
+    	var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
+    	event.preventDefault();
+    });
+    
+    
     myApp.initPullToRefresh(ptrContent);
+    
     
     
     
@@ -131,10 +136,6 @@ function getArticle(id){
 			var content = data[0].content.rendered;
 			
 			$$('.content-block').html(content);
-			
-			$$.each($$('.content-block a'), function(index, value){
-				$$(value).addClass('external-link').attr('target', '_blank');
-			});
 			
 		}
 	
