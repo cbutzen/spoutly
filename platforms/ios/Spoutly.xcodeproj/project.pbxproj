@@ -15,6 +15,7 @@
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		7679793D88B94833986B6C61 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FEAEBE65A94B81975394D2 /* CDVLogger.m */; };
 		DB535AF1180D48CB8F023816 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FCF253A84294BD8BF348 /* CDVStatusBar.m */; };
+		EA78EBC73A9345429D2B08F0 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A2852F21A04E9CAB6C4E90 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Spoutly/config.xml; sourceTree = "<group>"; };
+		C2A2852F21A04E9CAB6C4E90 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		978D9FD451A748A9AD6A9905 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				BB2BC091ADEC41BABAB688AC /* CDVLogger.h */,
 				DEE8FCF253A84294BD8BF348 /* CDVStatusBar.m */,
 				384CDC7EC577440E847367FE /* CDVStatusBar.h */,
+				C2A2852F21A04E9CAB6C4E90 /* CDVInAppBrowser.m */,
+				978D9FD451A748A9AD6A9905 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = Spoutly/Plugins;
@@ -288,6 +293,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				7679793D88B94833986B6C61 /* CDVLogger.m in Sources */,
 				DB535AF1180D48CB8F023816 /* CDVStatusBar.m in Sources */,
+				EA78EBC73A9345429D2B08F0 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

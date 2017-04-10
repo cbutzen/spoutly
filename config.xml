@@ -78,6 +78,10 @@
 		<splash src="www/images/platforms/ios/splash/Default-736h.png" width="1242" height="2208"/>
 		<splash src="www/images/platforms/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
 	</platform>
+	<feature name="InAppBrowser">
+    	<param name="ios-package" value="CDVInAppBrowser" />
+	</feature>
+	<feature name="InAppBrowser" />
      
     
      
