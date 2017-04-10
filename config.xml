@@ -34,7 +34,7 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-    <plugin name="cordova-plugin-inappbrowser" spec="1.7.1-dev" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0" />
     <engine name="ios" spec="~4.3.1" />
     <preference name="AllowInlineMediaPlayback" value="true" />
 	<preference name="MediaPlaybackRequiresUserAction" value="false" />   
