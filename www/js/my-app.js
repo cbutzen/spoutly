@@ -123,9 +123,13 @@ function getArticle(id){
 		},
 		success: function(data){
 			//console.log(data);
+			var title = data[0].title.rendered;
 			var content = data[0].content.rendered;
+			var featured_image_url = data[0].featured_image_url;
 			
-			$$('.content-block').html(content);
+			var featured_image = '<img src="'+featured_image_url+'" />';
+			
+			$$('.content-block').html('<h2>'+title+'</h2>'+'<div>'+featured_image+'</div>'+content);
 			
 			$$.each($$('.content-block a'), function (index, url){
 				$$(url).addClass('external-link');

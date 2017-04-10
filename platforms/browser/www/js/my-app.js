@@ -33,28 +33,18 @@ $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
     
-    $$('.external-link').on('click, touchend', function(event){
-    
-    	var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
-    	ref.show();
-    });
-    
-    
     myApp.initPullToRefresh(ptrContent);
-    
-    
-    
-    
+ 
     getArticles();
 });
 
 
 // Now we need to run the code that will be executed only for About page.
 
-myApp.onPageInit('index', function (page) {
-    // Do something here for "about" page
-   //console.log(page);
-   
+$$('.external-link').on('click, touchend', function(event){
+    var url = $$(this).attr('href');
+    var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
+    ref.show();
 });
 
 
@@ -133,9 +123,17 @@ function getArticle(id){
 		},
 		success: function(data){
 			//console.log(data);
+			var title = data[0].title.rendered;
 			var content = data[0].content.rendered;
+			var featured_image_url = data[0].featured_image_url;
 			
-			$$('.content-block').html(content);
+			var featured_image = '<img src="'+featured_image_url+'" />';
+			
+			$$('.content-block').html('<h2>'+title+'</h2>'+'<div>'+featured_image+'</div>'+content);
+			
+			$$.each($$('.content-block a'), function (index, url){
+				$$(url).addClass('external-link');
+			});
 			
 		}
 	
