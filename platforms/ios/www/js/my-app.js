@@ -59,6 +59,12 @@ myApp.onPageInit('about', function (page) {
    //console.log(page);
 });
 
+
+myApp.onPageInit('google', function (page) {
+    // Do something here for "about" page
+   //console.log(page);
+   $$('.content-block iframe').attr('src', 'http://google.com');
+});
    
 
 
@@ -124,7 +130,8 @@ function getArticle(id){
 			$$('.content-block').html(content);
 			
 			$$.each($$('.content-block a'), function(index, value){
-				$$(value).addClass('external');
+				//$$(value).addClass('external');
+				//$$(value).attr('onclick', 'onClick="window.open('+$$(value).attr('href')+',\'_blank\',\'location=yes\');return false;"');
 			});
 			
 		}
