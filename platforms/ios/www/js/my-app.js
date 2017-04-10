@@ -11,25 +11,26 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+
+// Pull to refresh content
+var ptrContent = $$('.pull-to-refresh-content');
+ 
+	// Add 'refresh' listener on it
+ptrContent.on('refresh', function (e) {
+    // Emulate 2s loading
+    setTimeout(function () {
+		getArticles();
+		// When loading done, we need to reset it
+		myApp.pullToRefreshDone();
+	}, 2000);
+});
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
-    // Pull to refresh content
-	var ptrContent = $$('.pull-to-refresh-content');
- 
-	// Add 'refresh' listener on it
-	ptrContent.on('ptr:refresh', function (e) {
-    // Emulate 2s loading
-    	setTimeout(function () {
-       		//getArticles();
-        	// When loading done, we need to reset it
-        	myApp.pullToRefreshDone();
-    	}, 2000);
-	});
-   
-	myApp.initPullToRefresh(ptrContent);
-    
+    myApp.initPullToRefresh(ptrContent);
+    //myApp.alert('Hello there!');
     
     
     getArticles();
@@ -37,6 +38,13 @@ $$(document).on('deviceready', function() {
 
 
 // Now we need to run the code that will be executed only for About page.
+
+myApp.onPageInit('index', function (page) {
+    // Do something here for "about" page
+   //console.log(page);
+   myApp.alert('Hello');
+});
+
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('article', function (page) {
@@ -50,6 +58,9 @@ myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
    //console.log(page);
 });
+
+   
+
 
 function getArticles(){
 	$$.ajax({
@@ -68,6 +79,8 @@ function getArticles(){
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
+				
+				$$('.pre-loader-wrapper').remove();
 				
 				$$('.article-list').append(
 				

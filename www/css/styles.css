@@ -32,12 +32,13 @@ body.spoutly-theme .navbar:after{
 }
 
 iframe{
+	width:100%;
 	max-width:100% !important;
 	height:auto !important;
 }
 
-.content-block img{
-	max-width:100%;
+.content-block div, .content-block img{
+	max-width:100% !important;
 	height:auto;
 }
 
