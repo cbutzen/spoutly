@@ -46,9 +46,9 @@
     <allow-intent href="http://cdn.syndication.twimg.com/*" />
     <allow-navigation href="http://cdn.syndication.twimg.com/*" />
 	
-    <allow-navigation href="https://*.imgur.com/" />
-	<allow-navigation href="https://*.twitter.com/" />
-	<allow-navigation href="https://*.twimg.com/" />
+    <allow-navigation href="https://*.imgur.com/*" />
+	<allow-navigation href="https://*.twitter.com/*" />
+	<allow-navigation href="https://*.twimg.com/*" />
     
     <allow-intent href="*" />
     <allow-navigation href="*" />
@@ -121,6 +121,9 @@
     	<param name="ios-package" value="CDVInAppBrowser" />
 	</feature>
 	<feature name="InAppBrowser" />
+	<preference name="StatusBarOverlaysWebView" value="true" />
+	<preference name="StatusBarBackgroundColor" value="#1d2028" />
+	<preference name="StatusBarStyle" value="lightcontent" />
      
     
      
