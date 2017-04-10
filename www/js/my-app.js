@@ -42,8 +42,8 @@ $$(document).on('deviceready', function() {
 // Now we need to run the code that will be executed only for About page.
 
 $$('.external-link').on('click, touchend', function(event){
-    
-    var ref = cordova.InAppBrowser.open('http://google.com', '_blank', 'location=yes');
+    var url = $$(this).attr('href');
+    var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
     ref.show();
 });
 
@@ -126,6 +126,10 @@ function getArticle(id){
 			var content = data[0].content.rendered;
 			
 			$$('.content-block').html(content);
+			
+			$$.each($$('.content-block a'), function (index, url){
+				$$(url).addClass('external-link');
+			});
 			
 		}
 	
