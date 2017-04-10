@@ -52,6 +52,13 @@ myApp.onPageInit('article', function (page) {
    
    getArticle(page.query.id);
    //console.log(page);
+   
+   $$('external').on('click, touchend', function(event){
+   		var url = $$(this).attr('href');
+   		var ref = window.open(url, '_blank', 'location=yes');
+   		event.preventDefault();
+   });
+   
 });
 
 myApp.onPageInit('about', function (page) {
@@ -123,7 +130,7 @@ function getArticle(id){
 			$$('.content-block').html(content);
 			
 			$$.each($$('.content-block a'), function(index, value){
-				$$(value).addClass('external').attr('target', '_system');
+				$$(value).addClass('external').attr('target', '_blank');
 			});
 			
 		}
