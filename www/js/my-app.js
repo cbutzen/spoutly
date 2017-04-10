@@ -123,7 +123,7 @@ function getArticle(id){
 			$$('.content-block').html(content);
 			
 			$$.each($$('.content-block a'), function(index, value){
-				$$(value).addClass('inapp-browser');
+				$$(value).addClass('external').attr('target', '_system');
 			});
 			
 		}
