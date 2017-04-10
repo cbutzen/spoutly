@@ -124,7 +124,8 @@ function getArticle(id){
 			$$('.content-block').html(content);
 			
 			$$.each($$('.content-block a'), function(index, value){
-				$$(value).addClass('external');
+				//$$(value).addClass('external');
+				$$(value).attr('onclick', 'onClick="window.open('+$$(value).attr('href')+',\'_blank\',\'location=yes\');return false;"');
 			});
 			
 		}
