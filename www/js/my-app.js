@@ -138,6 +138,10 @@ function getArticle(id){
 				$$(url).addClass('external-link');
 			});
 			
+			if ( typeof window.instgrm !== 'undefined' ) {
+				window.instgrm.Embeds.process();
+			}
+			
 		}
 	
 	});
