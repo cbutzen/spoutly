@@ -81,7 +81,7 @@ myApp.onPageInit('about', function (page) {
 });
 
 myApp.onPageAfterAnimation('article', function(page){
-	window.instgrm.Embeds.process();
+	//window.instgrm.Embeds.process();
 
 });
 
