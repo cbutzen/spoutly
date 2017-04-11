@@ -159,6 +159,14 @@ function getArticle(id){
 			//myApp.alert('ok');
 			//window.instgrm.Embeds.process();
 			//twttr.widgets.load();
+			if ( typeof window.instgrm !== 'undefined' ) {
+    			window.instgrm.Embeds.process();
+			}
+			
+			if ( typeof window.twitter !== 'undefined' ) {
+    			window.twttr.widgets.load();
+			}
+			
 		}
 	
 	});
