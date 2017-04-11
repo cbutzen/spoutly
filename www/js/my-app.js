@@ -80,8 +80,8 @@ myApp.onPageInit('about', function (page) {
     
 });
 
-myApp.onPageAfterAnimation('about', function(page){
-	//instgrm.Embeds.process();
+myApp.onPageAfterAnimation('article', function(page){
+	window.instgrm.Embeds.process();
 
 });
 
@@ -158,7 +158,7 @@ function getArticle(id){
 			});
 			
 			//myApp.alert('ok');
-			//window.instgrm.Embeds.process();
+			window.instgrm.Embeds.process();
 		}
 	
 	});
