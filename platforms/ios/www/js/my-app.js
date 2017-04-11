@@ -8,7 +8,14 @@ var $$ = Dom7;
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
-    dynamicNavbar: true
+    dynamicNavbar: true,
+    cache: false,
+    onAjaxStart: function (xhr) {
+        myApp.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        myApp.hideIndicator();
+    }
 });
 
 
@@ -35,7 +42,7 @@ $$(document).on('deviceready', function() {
     
     myApp.initPullToRefresh(ptrContent);
  
-    getArticles();
+    //getArticles();
     
     
     
@@ -74,7 +81,7 @@ myApp.onPageInit('about', function (page) {
 });
 
 myApp.onPageAfterAnimation('about', function(page){
-	$$.instgrm.Embeds.process();
+	//instgrm.Embeds.process();
 
 });
 
