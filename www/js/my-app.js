@@ -157,8 +157,8 @@ function getArticle(id){
 			});
 			
 			//myApp.alert('ok');
-			window.instgrm.Embeds.process();
-			twttr.widgets.load();
+			//window.instgrm.Embeds.process();
+			//twttr.widgets.load();
 		}
 	
 	});
