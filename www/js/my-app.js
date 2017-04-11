@@ -42,7 +42,7 @@ $$(document).on('deviceready', function() {
     
     myApp.initPullToRefresh(ptrContent);
  
-    //getArticles();
+    getArticles();
     
     
     
@@ -81,7 +81,6 @@ myApp.onPageInit('about', function (page) {
 });
 
 myApp.onPageAfterAnimation('article', function(page){
-	//window.instgrm.Embeds.process();
 
 });
 
@@ -159,6 +158,7 @@ function getArticle(id){
 			
 			//myApp.alert('ok');
 			window.instgrm.Embeds.process();
+			twttr.widgets.load();
 		}
 	
 	});
