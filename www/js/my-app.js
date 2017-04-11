@@ -163,9 +163,9 @@ function getArticle(id){
 			}
 			
 			//Facebook
-    		if (typeof window.FB !== 'undefined') {
+    		/*if (typeof window.FB !== 'undefined') {
         		window.FB.init({ status: true, cookie: true, xfbml: true });
-    		} 
+    		}*/ 
 			
 		}
 	
