@@ -67,6 +67,15 @@ myApp.onPageInit('article', function (page) {
 myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
    //console.log(page);
+    //getArticle(3872);
+    
+    
+    
+});
+
+myApp.onPageAfterAnimation('about', function(page){
+	$$.instgrm.Embeds.process();
+
 });
 
 
@@ -125,6 +134,9 @@ function getArticle(id){
 			
 		},
 		success: function(data){
+			
+			
+			
 			//console.log(data);
 			var title = data[0].title.rendered;
 			var content = data[0].content.rendered;
@@ -138,10 +150,8 @@ function getArticle(id){
 				$$(url).addClass('external-link');
 			});
 			
-			if ( typeof window.instgrm !== 'undefined' ) {
-				window.instgrm.Embeds.process();
-			}
-			
+			//myApp.alert('ok');
+			//window.instgrm.Embeds.process();
 		}
 	
 	});
