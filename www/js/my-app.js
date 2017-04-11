@@ -158,7 +158,7 @@ function getArticle(id){
     			window.instgrm.Embeds.process();
 			}
 			
-			if ( typeof window.twitter !== 'undefined' ) {
+			if ( typeof window.twttr !== 'undefined' ) {
     			window.twttr.widgets.load();
 			}
 			
