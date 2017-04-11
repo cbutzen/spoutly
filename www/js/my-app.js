@@ -162,13 +162,13 @@ function getArticle(id){
         	});
 			
 			
-			/*if ( typeof window.instgrm !== 'undefined' ) {
+			if ( typeof window.instgrm !== 'undefined' ) {
     			window.instgrm.Embeds.process();
 			}
 			
 			if ( typeof window.twitter !== 'undefined' ) {
     			window.twttr.widgets.load();
-			}*/
+			}
 			
 		}
 	
