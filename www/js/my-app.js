@@ -88,9 +88,7 @@ function getArticles(){
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
-				
-				$$('.pre-loader-wrapper').remove();
-				
+								
 				$$('.article-list').append(
 				
       				'<div class="card">'+

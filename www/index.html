@@ -11,11 +11,18 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
     <!--<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
-    <meta http-equiv="Content-Security-Policy" 
+    <!--<meta http-equiv="Content-Security-Policy" 
              content="default-src * 'self' data: gap: wss: ws:; 
                       style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
                       script-src * 'self' 'unsafe-inline' 'unsafe-eval';
-                      img-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+                      img-src * 'self' 'unsafe-inline' 'unsafe-eval';">-->
+                      
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src *; 
+    style-src * 'unsafe-inline'; 
+    script-src * 'unsafe-inline'; 
+    media-src *; img-src * data:; 
+" />
 
 
 
@@ -108,9 +115,7 @@
                             <div class="content-block-title">New Reads</div>
                             
                             <div class="article-list">
-  								<div class="col-12 pre-loader-wrapper" style="text-align: center; margin-left: auto; margin-right: auto;">
-        							<span style="width:42px; height:42px; " class="preloader"></span>
-      							</div>
+  								
                             </div>
                          
                             

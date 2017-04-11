@@ -38,6 +38,14 @@
     <allow-intent href="https://*platform.twitter.com/*" />
     <allow-navigation href="https://*platform.twitter.com/*" />
     
+    <origin href="http://*platform.instagram.com/*" />
+    <allow-intent href="http://*platform.instagram.com/*" />
+    <allow-navigation href="http://*platform.instagram.com/*" />
+    
+    <origin href="https://*platform.instagram.com/*" />
+    <allow-intent href="https://*platform.instagram.com/*" />
+    <allow-navigation href="https://*platform.instagram.com/*" />
+    
     <access origin="https://cdn.syndication.twimg.com/*" />
     <allow-intent href="https://cdn.syndication.twimg.com/*" />
     <allow-navigation href="https://cdn.syndication.twimg.com/*" />
