@@ -156,16 +156,19 @@ function getArticle(id){
 				$$(url).addClass('external-link');
 			});
 			
-			//myApp.alert('ok');
-			//window.instgrm.Embeds.process();
-			//twttr.widgets.load();
-			if ( typeof window.instgrm !== 'undefined' ) {
+			
+			$$(content).find("script").each(function(i) {
+            	eval($(this).text());
+        	});
+			
+			
+			/*if ( typeof window.instgrm !== 'undefined' ) {
     			window.instgrm.Embeds.process();
 			}
 			
 			if ( typeof window.twitter !== 'undefined' ) {
     			window.twttr.widgets.load();
-			}
+			}*/
 			
 		}
 	
