@@ -158,8 +158,8 @@ function getArticle(id){
     			window.instgrm.Embeds.process();
 			}
 			
-			if ( typeof window.twitter !== 'undefined' ) {
-    			window.twttr.widgets.load();
+			if ( typeof twitter !== 'undefined' ) {
+    			twttr.widgets.load();
 			}
 			
 			//Facebook
