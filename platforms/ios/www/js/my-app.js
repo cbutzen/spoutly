@@ -42,7 +42,7 @@ $$(document).on('deviceready', function() {
     
     myApp.initPullToRefresh(ptrContent);
  
-    //getArticles();
+    getArticles();
     
     
     
@@ -80,8 +80,7 @@ myApp.onPageInit('about', function (page) {
     
 });
 
-myApp.onPageAfterAnimation('about', function(page){
-	//instgrm.Embeds.process();
+myApp.onPageAfterAnimation('article', function(page){
 
 });
 
@@ -142,8 +141,6 @@ function getArticle(id){
 		},
 		success: function(data){
 			
-			
-			
 			//console.log(data);
 			var title = data[0].title.rendered;
 			var content = data[0].content.rendered;
@@ -151,14 +148,31 @@ function getArticle(id){
 			
 			var featured_image = '<img src="'+featured_image_url+'" />';
 			
+			
+			
 			$$('.content-block').html('<h2>'+title+'</h2>'+'<div>'+featured_image+'</div>'+content);
 			
 			$$.each($$('.content-block a'), function (index, url){
 				$$(url).addClass('external-link');
 			});
+
+			if ( typeof window.instgrm !== 'undefined' ) {
+    			window.instgrm.Embeds.process();
+			}
 			
-			//myApp.alert('ok');
-			//window.instgrm.Embeds.process();
+			if ( typeof window.twitter !== 'undefined' ) {
+    			window.twttr.widgets.load();
+			}
+			
+			//Facebook
+    		if (typeof (FB) != 'undefined') {
+        		FB.init({ status: true, cookie: true, xfbml: true });
+    		} else {
+        		$.getScript("http://connect.facebook.net/en_US/all.js#xfbml=1", function () {
+            		FB.init({ status: true, cookie: true, xfbml: true });
+        		});
+    		}
+			
 		}
 	
 	});
