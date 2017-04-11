@@ -148,8 +148,6 @@ function getArticle(id){
 			
 			var featured_image = '<img src="'+featured_image_url+'" />';
 			
-			
-			
 			$$('.content-block').html('<h2>'+title+'</h2>'+'<div>'+featured_image+'</div>'+content);
 			
 			$$.each($$('.content-block a'), function (index, url){
@@ -165,13 +163,9 @@ function getArticle(id){
 			}
 			
 			//Facebook
-    		if (typeof (FB) != 'undefined') {
-        		FB.init({ status: true, cookie: true, xfbml: true });
-    		} else {
-        		$.getScript("http://connect.facebook.net/en_US/all.js#xfbml=1", function () {
-            		FB.init({ status: true, cookie: true, xfbml: true });
-        		});
-    		}
+    		if (typeof window.FB !== 'undefined') {
+        		window.FB.init({ status: true, cookie: true, xfbml: true });
+    		} 
 			
 		}
 	
