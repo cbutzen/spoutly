@@ -27,8 +27,8 @@ body.spoutly-theme .navbar:after{
 
 
 
-.statusbar-overlay {
-    
+body.spoutly-theme .statusbar-overlay {
+    background-color:#1d2028;
 }
 
 iframe{

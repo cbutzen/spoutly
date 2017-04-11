@@ -26,9 +26,17 @@
     <allow-intent href="http://*twitter.com/*" />
     <allow-navigation href="http://*twitter.com/*" />
     
-     <origin href="https://*twitter.com/*" />
+    <origin href="https://*twitter.com/*" />
     <allow-intent href="https://*twitter.com/*" />
     <allow-navigation href="https://*twitter.com/*" />
+    
+    <origin href="http://*instagram.com/*" />
+    <allow-intent href="http://*instagram.com/*" />
+    <allow-navigation href="http://*instagram.com/*" />
+    
+    <origin href="https://*instagram.com/*" />
+    <allow-intent href="https://*instagram.com/*" />
+    <allow-navigation href="https://*instagram.com/*" />
     
     <origin href="http://*platform.twitter.com/*" />
     <allow-intent href="http://*platform.twitter.com/*" />

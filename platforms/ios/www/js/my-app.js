@@ -88,9 +88,7 @@ function getArticles(){
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
-				
-				$$('.pre-loader-wrapper').remove();
-				
+								
 				$$('.article-list').append(
 				
       				'<div class="card">'+
@@ -139,6 +137,10 @@ function getArticle(id){
 			$$.each($$('.content-block a'), function (index, url){
 				$$(url).addClass('external-link');
 			});
+			
+			if ( typeof window.instgrm !== 'undefined' ) {
+				window.instgrm.Embeds.process();
+			}
 			
 		}
 	

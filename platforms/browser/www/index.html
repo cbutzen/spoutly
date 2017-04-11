@@ -11,12 +11,18 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
     <!--<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
-    <meta http-equiv="Content-Security-Policy" 
+    <!--<meta http-equiv="Content-Security-Policy" 
              content="default-src * 'self' data: gap: wss: ws:; 
                       style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
                       script-src * 'self' 'unsafe-inline' 'unsafe-eval';
-                      child-src * 'self' 'unsafe-inline' 'unsafe-eval';
-                      img-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+                      img-src * 'self' 'unsafe-inline' 'unsafe-eval';">-->
+                      
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src * gap: data: blob:; 
+    style-src * 'unsafe-inline'; 
+    script-src * 'unsafe-inline' gap: data: blob:; 
+    media-src *; img-src * data: gap: blob:; 
+" />
 
 
 
@@ -24,7 +30,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
 
@@ -109,9 +115,7 @@
                             <div class="content-block-title">New Reads</div>
                             
                             <div class="article-list">
-  								<div class="col-12 pre-loader-wrapper" style="text-align: center; margin-left: auto; margin-right: auto;">
-        							<span style="width:42px; height:42px; " class="preloader"></span>
-      							</div>
+  								
                             </div>
                          
                             
