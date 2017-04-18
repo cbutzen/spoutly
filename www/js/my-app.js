@@ -1,6 +1,7 @@
 // Initialize app
 var myApp = new Framework7();
 
+var postIds = [];
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -96,6 +97,7 @@ function getArticles(){
 			per_page : 10, 
 			orderby : 'date',
 			sort : 'desc',
+			exclude: postIds
 			
 		},
 		success: function(data){
@@ -103,6 +105,10 @@ function getArticles(){
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
+				
+				var id = value.id;
+				
+				id.push(postIds);
 								
 				$$('.article-list').append(
 				
