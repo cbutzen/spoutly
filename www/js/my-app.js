@@ -74,7 +74,7 @@ myApp.onPageAfterAnimation('article', function(page){
 
 function getArticles(){
 	$$.ajax({
-		url: 'http://spoutly.com/wp-json/wp/v2/posts',
+		url: 'http://spoutly.com/wp-json/wp/v2/posts/',
 		cache: false,
 		method: 'GET',
 		//dataType: 'json',
@@ -83,7 +83,6 @@ function getArticles(){
 			per_page : 10, 
 			orderby : 'date',
 			sort : 'desc'
-			//exclude: postIds
 		},
 		success: function(data, status, xhr){
 			//console.log(data);
