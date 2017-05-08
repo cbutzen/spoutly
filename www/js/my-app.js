@@ -88,8 +88,6 @@ myApp.onPageAfterAnimation('article', function(page){
 
 
 function getArticles(){
-	
-	
 	$$.ajax({
 		url: 'http://spoutly.com/wp-json/wp/v2/posts',
 		cache: false,
@@ -122,8 +120,7 @@ function getArticles(){
   						
   						'<div class="card-content card-excerpt">'+
     						
-    						/*'<div class="card-content-inner">'+value.raw_excerpt+'...</div>'+*/
-    						'<div class="card-content-inner">'+id+'</div>'+
+    						'<div class="card-content-inner">'+value.raw_excerpt+'...</div>'+
   						'</div>'+
   						'<div class="card-footer">'+date.toDateString() +'</div>'+
 					'</div>'
