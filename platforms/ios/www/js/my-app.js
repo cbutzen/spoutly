@@ -89,11 +89,6 @@ myApp.onPageAfterAnimation('article', function(page){
 
 function getArticles(){
 	
-	postIds.each(function(index, value){
-	
-		$$('.article-list').append(value);
-	
-	});
 	
 	$$.ajax({
 		url: 'http://spoutly.com/wp-json/wp/v2/posts',
