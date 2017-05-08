@@ -83,10 +83,6 @@ function getArticles(){
 			orderby : 'date',
 			sort : 'desc'
 			//exclude: postIds
-			
-		},
-		beforeSend: function(){
-			myApp.alert(document.write(postIds.join(",")));
 		},
 		success: function(data){
 			//console.log(data);
