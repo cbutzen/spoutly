@@ -27,7 +27,7 @@ var ptrContent = $$('.pull-to-refresh-content');
 ptrContent.on('refresh', function (e) {
     // Emulate 2s loading
     setTimeout(function () {
-		getArticles();
+		getArticles(postIds);
 		// When loading done, we need to reset it
 		myApp.pullToRefreshDone();
 	}, 2000);
@@ -43,7 +43,7 @@ $$(document).on('deviceready', function() {
     
     myApp.initPullToRefresh(ptrContent);
  
-    getArticles();
+    getArticles(postIds);
     
     
     
@@ -87,7 +87,7 @@ myApp.onPageAfterAnimation('article', function(page){
 
 
 
-function getArticles(){
+function getArticles(postIds){
 	$$.ajax({
 		url: 'http://spoutly.com/wp-json/wp/v2/posts',
 		cache: false,
