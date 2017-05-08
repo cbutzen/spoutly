@@ -21,7 +21,9 @@ var ptrContent = $$('.pull-to-refresh-content');
 ptrContent.on('refresh', function (e) {
     // Emulate 2s loading
     setTimeout(function () {
-		getArticles();
+		
+		
+		getArticles('refresh');
 		// When loading done, we need to reset it
 		myApp.pullToRefreshDone();
 	}, 2000);
@@ -34,13 +36,19 @@ ptrContent.on('refresh', function (e) {
 $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
-    
-    
  
-    getArticles();
+    getArticles('refresh');
     //myApp.initPullToRefresh(ptrContent);
     
     
+    
+    
+    
+});
+
+$$(document).on('click, touchend', '#loadmore', function(event){
+	$$(this).addClass('disabled').html('<span class="preloader preloader-white" style="position:relative;top:4px;"></span> Loading...');
+	getArticles('loadmore');
 });
 
 
@@ -72,7 +80,14 @@ myApp.onPageAfterAnimation('article', function(page){
 
 
 
-function getArticles(){
+function getArticles(type){
+	
+	if(type == 'refresh'){
+		postIds = [];
+    	$$('.article-list').html('');
+	}else if(type == 'loadmore'){
+	
+	}
 	
 	var excludes = $$.unique(postIds).join(",");
 	
@@ -119,7 +134,12 @@ function getArticles(){
 			
 			});
 			
-			$$('.article-list').prepend($$.unique(postIds).join(",") +'<br/>');
+			//$$('.article-list').prepend($$.unique(postIds).join(",") +'<br/>');
+			
+			$$('#loadmore').remove();
+			
+			$$('.article-list').append('<a href="#" id="loadmore" class="button button-big button-fill">Load More </a>');
+			
 		},
 		error: function(xhr, status){
 			//$$('.article-list').prepend(status);
