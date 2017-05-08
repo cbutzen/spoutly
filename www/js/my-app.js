@@ -96,8 +96,8 @@ function getArticles(){
 		data: {
 			per_page : 10, 
 			orderby : 'date',
-			sort : 'desc',
-			exclude: postIds
+			sort : 'desc'
+			//exclude: postIds
 			
 		},
 		success: function(data){
@@ -108,7 +108,7 @@ function getArticles(){
 				
 				var id = value.id;
 				
-				id.push(postIds);
+				//id.push(postIds);
 								
 				$$('.article-list').append(
 				
@@ -141,9 +141,7 @@ function getArticle(id){
 		crossDomain: true,
 		data: {
 			include: id,
-			per_page: 1,
-			
-			
+			per_page: 1
 		},
 		success: function(data){
 			
