@@ -10,7 +10,13 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true,
-    cache: false
+    cache: false,
+    onAjaxStart: function (xhr) {
+        myApp.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        myApp.hideIndicator();
+    }
 });
 
 
@@ -174,8 +180,8 @@ function getArticle(id){
 			
 			$$('.content-block').html('<h2>'+title+'</h2>'+'<div>'+featured_image+'</div>'+content);
 			
-			$$.each($$('.content-block a'), function (index, url){
-				$$(url).addClass('external-link');
+			$$.each($$('.content-block a'), function (index, anchor){
+				$$(anchor).addClass('external-link');
 			});
 
 			if ( typeof window.instgrm !== 'undefined' ) {
