@@ -84,7 +84,7 @@ function getArticles(){
 			sort : 'desc'
 			//exclude: postIds
 		},
-		success: function(data){
+		success: function(data, status, xhr){
 			//console.log(data);
 			$$.each(data, function(index, value){
 			
@@ -112,6 +112,10 @@ function getArticles(){
 				);
 			
 			});
+		},
+		error: function(xhr, status){
+			$$('.article-list').append(status);
+		
 		}
 	
 	});
