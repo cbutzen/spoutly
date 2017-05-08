@@ -96,8 +96,8 @@ function getArticles(){
 		data: {
 			per_page : 10, 
 			orderby : 'date',
-			sort : 'desc',
-			exclude: postIds
+			sort : 'desc'
+			//exclude: postIds
 			
 		},
 		beforeSend: function(){
