@@ -1,6 +1,7 @@
 // Initialize app
 var myApp = new Framework7();
 
+var postIds = [];
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -87,6 +88,13 @@ myApp.onPageAfterAnimation('article', function(page){
 
 
 function getArticles(){
+	
+	postIds.each(function(index, value){
+	
+		$$('.article-list').append(value);
+	
+	});
+	
 	$$.ajax({
 		url: 'http://spoutly.com/wp-json/wp/v2/posts',
 		cache: false,
@@ -96,6 +104,7 @@ function getArticles(){
 			per_page : 10, 
 			orderby : 'date',
 			sort : 'desc',
+			exclude: postIds
 			
 		},
 		success: function(data){
@@ -103,6 +112,10 @@ function getArticles(){
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
+				
+				var id = value.id;
+				
+				id.push(postIds);
 								
 				$$('.article-list').append(
 				
@@ -148,8 +161,6 @@ function getArticle(id){
 			
 			var featured_image = '<img src="'+featured_image_url+'" />';
 			
-			
-			
 			$$('.content-block').html('<h2>'+title+'</h2>'+'<div>'+featured_image+'</div>'+content);
 			
 			$$.each($$('.content-block a'), function (index, url){
@@ -160,18 +171,14 @@ function getArticle(id){
     			window.instgrm.Embeds.process();
 			}
 			
-			if ( typeof window.twitter !== 'undefined' ) {
+			if ( typeof window.twttr !== 'undefined' ) {
     			window.twttr.widgets.load();
 			}
 			
 			//Facebook
-    		if (typeof (FB) != 'undefined') {
-        		FB.init({ status: true, cookie: true, xfbml: true });
-    		} else {
-        		$.getScript("http://connect.facebook.net/en_US/all.js#xfbml=1", function () {
-            		FB.init({ status: true, cookie: true, xfbml: true });
-        		});
-    		}
+    		/*if (typeof window.FB !== 'undefined') {
+        		window.FB.init({ status: true, cookie: true, xfbml: true });
+    		}*/ 
 			
 		}
 	
