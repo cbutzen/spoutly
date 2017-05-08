@@ -89,7 +89,7 @@ myApp.onPageAfterAnimation('article', function(page){
 
 function getArticles(){
 	
-	postIds.each(function(index, value){
+	$$.each(postIds, function(index, value){
 	
 		$$('.article-list').append(value);
 	
