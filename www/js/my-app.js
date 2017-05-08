@@ -76,7 +76,8 @@ function getArticles(){
 	$$.ajax({
 		url: 'http://spoutly.com/wp-json/wp/v2/posts',
 		cache: false,
-		dataType: 'json',
+		method: 'GET',
+		//dataType: 'json',
 		crossDomain: true,
 		data: {
 			per_page : 10, 
@@ -90,9 +91,9 @@ function getArticles(){
 			
 				var date = new Date(value.date);
 				
-				var id = value.id;
+				//var id = value.id;
 				
-				id.push(postIds);
+				//id.push(postIds);
 								
 				$$('.article-list').append(
 				
