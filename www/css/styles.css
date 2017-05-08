@@ -35,6 +35,7 @@ iframe{
 	width:100%;
 	max-width:100% !important;
 	height:auto !important;
+	min-height:175px;
 }
 
 .content-block div, .content-block img{
