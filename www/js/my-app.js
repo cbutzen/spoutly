@@ -101,7 +101,7 @@ function getArticles(){
 			
 		},
 		beforeSend: function(){
-			myApp.showIndicator();
+			//myApp.showIndicator();
 		},
 		success: function(data){
 			//console.log(data);
@@ -132,7 +132,7 @@ function getArticles(){
 			
 			});
 			
-			myApp.hideIndicator();
+			//myApp.hideIndicator();
 		}
 	
 	});
