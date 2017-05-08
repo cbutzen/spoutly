@@ -122,7 +122,8 @@ function getArticles(){
   						
   						'<div class="card-content card-excerpt">'+
     						
-    						'<div class="card-content-inner">'+value.raw_excerpt+'...</div>'+
+    						/*'<div class="card-content-inner">'+value.raw_excerpt+'...</div>'+*/
+    						'<div class="card-content-inner">'+id+'</div>'+
   						'</div>'+
   						'<div class="card-footer">'+date.toDateString() +'</div>'+
 					'</div>'
