@@ -100,6 +100,9 @@ function getArticles(){
 			exclude: postIds
 			
 		},
+		beforeSend: function(){
+			myApp.showIndicator();
+		},
 		success: function(data){
 			//console.log(data);
 			$$.each(data, function(index, value){
@@ -108,7 +111,7 @@ function getArticles(){
 				
 				var id = value.id;
 				
-				//id.push(postIds);
+				id.push(postIds);
 								
 				$$('.article-list').append(
 				
@@ -116,7 +119,7 @@ function getArticles(){
   						
   						'<a href="article.html?id='+value.id+'" style="background-image:url('+value.featured_image_url+')" valign="bottom" class="card-header color-white no-border card-featured-image"></a>'+
   						
-  						'<div class="card-header card-title"><a href="article.html?id='+value.id+'">'+value.title.rendered+'</a></div>'+
+  						'<div class="card-header card-title"><a href="article.html?id='+value.id+'">'+value.title.rendered+' - '+id+'</a></div>'+
   						
   						'<div class="card-content card-excerpt">'+
     						
@@ -128,6 +131,8 @@ function getArticles(){
 				);
 			
 			});
+			
+			myApp.hideIndicator();
 		}
 	
 	});
