@@ -35,10 +35,10 @@ $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
     
-    myApp.initPullToRefresh(ptrContent);
+    
  
     getArticles();
-    
+    //myApp.initPullToRefresh(ptrContent);
     
     
 });
@@ -73,26 +73,32 @@ myApp.onPageAfterAnimation('article', function(page){
 
 
 function getArticles(){
+	
+	var excludes = $$.unique(postIds).join(",");
+	
 	$$.ajax({
 		url: 'http://spoutly.com/wp-json/wp/v2/posts/',
 		cache: false,
 		method: 'GET',
-		//dataType: 'json',
+		dataType: 'json',
 		crossDomain: true,
 		data: {
 			per_page : 10, 
 			orderby : 'date',
-			sort : 'desc'
+			sort : 'desc',
+			exclude : excludes
+			
+		},
+		beforeSend: function(xhr){
+			//myApp.alert('Before Send');
 		},
 		success: function(data, status, xhr){
-			//console.log(data);
+			//myApp.alert('Success');
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
-				
-				//var id = value.id;
-				
-				//id.push(postIds);
+								
+				postIds.push(value.id);
 								
 				$$('.article-list').append(
 				
@@ -112,14 +118,20 @@ function getArticles(){
 				);
 			
 			});
+			
+			$$('.article-list').prepend($$.unique(postIds).join(",") +'<br/>');
 		},
 		error: function(xhr, status){
-			$$('.article-list').append(status);
-		
+			//$$('.article-list').prepend(status);
+			//myApp.alert(status);
 		}
 	
 	});
+	
+	
 }
+	
+	
 
 function getArticle(id){
 	$$.ajax({

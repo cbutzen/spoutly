@@ -10,13 +10,7 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true,
-    cache: false,
-    onAjaxStart: function (xhr) {
-        myApp.showIndicator();
-    },
-    onAjaxComplete: function (xhr) {
-        myApp.hideIndicator();
-    }
+    cache: false
 });
 
 
@@ -41,10 +35,10 @@ $$(document).on('deviceready', function() {
     //console.log("Device is ready!");
     
     
-    myApp.initPullToRefresh(ptrContent);
+    
  
     getArticles();
-    
+    //myApp.initPullToRefresh(ptrContent);
     
     
 });
@@ -63,22 +57,13 @@ $$(document).on('click, touchend','.external-link', function(event){
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('article', function (page) {
-    // Do something here for "about" page
-   
+
    getArticle(page.query.id);
-   //console.log(page);
-   
-   
    
 });
 
 myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
-   //console.log(page);
-    //getArticle(3872);
-    
-    
-    
+  
 });
 
 myApp.onPageAfterAnimation('article', function(page){
@@ -89,28 +74,31 @@ myApp.onPageAfterAnimation('article', function(page){
 
 function getArticles(){
 	
+	var excludes = $$.unique(postIds).join(",");
 	
 	$$.ajax({
-		url: 'http://spoutly.com/wp-json/wp/v2/posts',
+		url: 'http://spoutly.com/wp-json/wp/v2/posts/',
 		cache: false,
+		method: 'GET',
 		dataType: 'json',
 		crossDomain: true,
 		data: {
 			per_page : 10, 
 			orderby : 'date',
 			sort : 'desc',
-			exclude: postIds
+			exclude : excludes
 			
 		},
-		success: function(data){
-			//console.log(data);
+		beforeSend: function(xhr){
+			//myApp.alert('Before Send');
+		},
+		success: function(data, status, xhr){
+			//myApp.alert('Success');
 			$$.each(data, function(index, value){
 			
 				var date = new Date(value.date);
-				
-				var id = value.id;
-				
-				id.push(postIds);
+								
+				postIds.push(value.id);
 								
 				$$('.article-list').append(
 				
@@ -118,7 +106,7 @@ function getArticles(){
   						
   						'<a href="article.html?id='+value.id+'" style="background-image:url('+value.featured_image_url+')" valign="bottom" class="card-header color-white no-border card-featured-image"></a>'+
   						
-  						'<div class="card-header card-title"><a href="article.html?id='+value.id+'">'+value.title.rendered+'</a></div>'+
+  						'<div class="card-header card-title"><a href="article.html?id='+value.id+'">'+value.title.rendered+' - '+value.id+'</a></div>'+
   						
   						'<div class="card-content card-excerpt">'+
     						
@@ -130,10 +118,20 @@ function getArticles(){
 				);
 			
 			});
+			
+			$$('.article-list').prepend($$.unique(postIds).join(",") +'<br/>');
+		},
+		error: function(xhr, status){
+			//$$('.article-list').prepend(status);
+			//myApp.alert(status);
 		}
 	
 	});
+	
+	
 }
+	
+	
 
 function getArticle(id){
 	$$.ajax({
@@ -143,9 +141,7 @@ function getArticle(id){
 		crossDomain: true,
 		data: {
 			include: id,
-			per_page: 1,
-			
-			
+			per_page: 1
 		},
 		success: function(data){
 			
