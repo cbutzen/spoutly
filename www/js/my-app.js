@@ -10,13 +10,7 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true,
-    cache: false,
-    onAjaxStart: function (xhr) {
-        myApp.showIndicator();
-    },
-    onAjaxComplete: function (xhr) {
-        myApp.hideIndicator();
-    }
+    cache: false
 });
 
 
@@ -63,22 +57,13 @@ $$(document).on('click, touchend','.external-link', function(event){
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('article', function (page) {
-    // Do something here for "about" page
-   
+
    getArticle(page.query.id);
-   //console.log(page);
-   
-   
    
 });
 
 myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
-   //console.log(page);
-    //getArticle(3872);
-    
-    
-    
+  
 });
 
 myApp.onPageAfterAnimation('article', function(page){
@@ -101,7 +86,7 @@ function getArticles(){
 			
 		},
 		beforeSend: function(){
-			//myApp.showIndicator();
+			myApp.alert(document.write(postIds.join(",")));
 		},
 		success: function(data){
 			//console.log(data);
@@ -119,7 +104,7 @@ function getArticles(){
   						
   						'<a href="article.html?id='+value.id+'" style="background-image:url('+value.featured_image_url+')" valign="bottom" class="card-header color-white no-border card-featured-image"></a>'+
   						
-  						'<div class="card-header card-title"><a href="article.html?id='+value.id+'">'+value.title.rendered+' - '+id+'</a></div>'+
+  						'<div class="card-header card-title"><a href="article.html?id='+value.id+'">'+value.title.rendered+' - '+value.id+'</a></div>'+
   						
   						'<div class="card-content card-excerpt">'+
     						
@@ -131,8 +116,6 @@ function getArticles(){
 				);
 			
 			});
-			
-			//myApp.hideIndicator();
 		}
 	
 	});
